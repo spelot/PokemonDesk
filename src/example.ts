@@ -1,9 +1,19 @@
 // --- ТИПЫ --- //
 type ConcatFn = (a: string, b: string) => string;
+const concatViaType: ConcatFn = (a, b) => a + b;
+console.log(concatViaType('aasd', '2'));
 
-const concat: ConcatFn = (a, b) => a + b;
-
-console.log(concat('aasd', '2'));
+// второй вариант типизации этой функции через интерфейс,
+// и он мне больше нравится – так как с ним можно также создавать и обычные функции, а не только стрелочные
+interface ConcatFn1 {
+  (a: string, b: string): string;
+}
+const concatFnViaInterface: ConcatFn1 = function (a, b) {
+  return a + b;
+};
+const concatArrowViaInterface: ConcatFn1 = (a, b) => a + b;
+console.log(concatFnViaInterface('0.aasd', '2'));
+console.log(concatArrowViaInterface('1.aasd', '2'));
 
 // --- ИНТЕРФЕЙСЫ --- //
 interface Hometask {
