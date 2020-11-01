@@ -1,5 +1,5 @@
 {
-  "name": "PokemonDesk",
+  "name": "pokemon-desk",
   "version": "1.0.0",
   "scripts": {
     "build:dev": "env NODE_ENV=development webpack --config webpack.config.js",
