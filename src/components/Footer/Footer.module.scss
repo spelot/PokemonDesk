@@ -1,9 +1,34 @@
+@import '../../globalVariables.scss';
+
 .Footer {
+  width: 100%;
+  max-width: $maxWidthDesktop;
+  margin: 0 auto 33px;
+  display: flex;
+  justify-content: space-between;
   color: #212121;
   font-family: Karla;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 21px;
-  display: flex;
+}
+
+.label {
+  font-family: Karla;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  color: $colorParagraph;
+}
+
+.link {
+  text-decoration: none;
+  font-family: Karla;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  color: $colorParagraph;
 }
