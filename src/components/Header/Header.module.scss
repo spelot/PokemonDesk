@@ -28,6 +28,10 @@
   height: 63px;
 }
 
+.notActiveLogo {
+  pointer-events: none;
+}
+
 .menu {
   width: 100%;
   max-width: 658px;

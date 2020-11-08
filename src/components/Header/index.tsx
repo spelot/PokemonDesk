@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import cn from 'classnames';
+import { Link } from 'react-router-dom';
 
 import s from './Header.module.scss';
 
@@ -27,14 +28,20 @@ const Header: FC<IHeader> = ({ activeLink }) => {
     <div className={s.root}>
       <div className={cn(s.content)}>
         <div className={cn(s.logo)}>
-          <PokemonLogoSvg />
+          <Link
+            to="/"
+            className={cn({
+              [s.notActiveLogo]: activeLink === 0,
+            })}>
+            <PokemonLogoSvg />
+          </Link>
         </div>
         <ul className={cn(s.menu)}>
           {links.map(({ key, label, href }, linkId) => (
             <li key={key}>
-              <a className={cn(s.link, { [s.active]: linkId === activeLink })} href={href}>
+              <Link className={cn(s.link, { [s.active]: linkId === activeLink })} to={href}>
                 {label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

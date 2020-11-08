@@ -1,5 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
+import { RouteComponentProps } from 'react-router-dom';
 
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
@@ -10,7 +11,7 @@ import Heading from '../../components/Heading';
 
 import s from './Home.module.scss';
 
-const HomePage = () => {
+const HomePage: React.FC<RouteComponentProps> = ({ history }) => {
   return (
     <div className={s.root}>
       <Header activeLink={0} />
@@ -22,7 +23,7 @@ const HomePage = () => {
           <Heading size={2} withoutBold>
             You can know the type of Pokemon, its strengths, disadvantages and abilities
           </Heading>
-          <Button onClick={() => 0}>See pokemons</Button>
+          <Button onClick={() => history.push('/pokedex')}>See pokemons</Button>
         </div>
         <div className={s.contentParallax}>
           <Parallax />
