@@ -5,7 +5,7 @@ import s from './Footer.module.scss';
 
 const Footer: FC = () => {
   return (
-    <div className={cn(s.Footer)}>
+    <div className={s.root}>
       <div className={cn(s.label)}>
         Make with{' '}
         <span role="img" aria-label="love" aria-labelledby="">
