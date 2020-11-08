@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
+import React from 'react';
 import cn from 'classnames';
 
 import s from './Footer.module.scss';
 
-const Footer: FC = () => {
+const Footer: React.FC = () => {
   return (
     <div className={s.root}>
       <div className={cn(s.label)}>

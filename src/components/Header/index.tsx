@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
 
@@ -16,7 +16,7 @@ interface IHeader {
   activeLink: number;
 }
 
-const Header: FC<IHeader> = ({ activeLink }) => {
+const Header: React.FC<IHeader> = ({ activeLink }) => {
   const links: ILink[] = [
     { key: 0, label: 'Home', href: '/' },
     { key: 1, label: 'Pokédex', href: '/pokedex' },

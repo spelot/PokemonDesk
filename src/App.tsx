@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import cn from 'classnames';
 
@@ -7,7 +7,7 @@ import PokedexPage from './pages/Pokedex';
 
 import s from './App.module.scss';
 
-const App: FC = () => {
+const App: React.FC = () => {
   return (
     <div className={cn(s.App)}>
       <BrowserRouter>
