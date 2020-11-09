@@ -1,13 +1,12 @@
-@import '../../globalVariables.scss';
+@import '../../variables';
 
-.Footer {
+.root {
   width: 100%;
-  max-width: $maxWidthDesktop;
+  max-width: 1125px;
   margin: 0 auto 33px;
   display: flex;
   justify-content: space-between;
-  color: #212121;
-  font-family: Karla;
+  color: $dark;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
@@ -15,20 +14,18 @@
 }
 
 .label {
-  font-family: Karla;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 21px;
-  color: $colorParagraph;
+  color: $dark;
 }
 
 .link {
   text-decoration: none;
-  font-family: Karla;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 21px;
-  color: $colorParagraph;
+  color: $dark;
 }

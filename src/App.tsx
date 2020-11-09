@@ -1,16 +1,22 @@
-import React, { FC } from 'react';
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import cn from 'classnames';
 
-import s from './App.module.scss';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+import HomePage from './pages/Home';
+import PokedexPage from './pages/Pokedex';
 
-const App: FC = () => {
+import s from './App.module.scss';
+
+const App: React.FC = () => {
   return (
     <div className={cn(s.App)}>
-      <Header />
-      <div className={cn(s.Content)}>Yes, we did it! This is App Component Content!</div>
-      <Footer />
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/pokedex" component={PokedexPage} />
+          <Route exact path="/" component={HomePage} />
+          <Route path="*" render={() => <h1>TODO: 404 page</h1>} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 };

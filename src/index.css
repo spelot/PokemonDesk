@@ -1,8 +1,15 @@
+@import './fonts/Karla/karla.css';
+
 * {
+  box-sizing: border-box;
+}
+
+html,
+body {
   padding: 0;
   margin: 0;
 }
 
 body {
-  background: linear-gradient(180deg, #f5db13 0%, #f2b807 100%);
+  font-family: 'Karla', sans-serif;
 }

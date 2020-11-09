@@ -1,0 +1,14 @@
+@import '../../variables';
+
+.root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(180deg, #ffffff 30.32%, #f5f5f5 100%);
+}
+
+.content {
+  flex-grow: 1;
+  margin: 33px 0;
+}
