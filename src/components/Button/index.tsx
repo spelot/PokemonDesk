@@ -8,8 +8,13 @@ export enum ButtonSize {
   small,
 }
 
+export enum ButtonColor {
+  yellow,
+  green,
+}
+
 interface ButtonProps {
-  yellow?: boolean;
+  color?: ButtonColor;
   fullWidth?: boolean;
   size?: ButtonSize;
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
@@ -18,7 +23,7 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({
   children,
   onClick,
-  yellow = false,
+  color = ButtonColor.green,
   size = ButtonSize.base,
   fullWidth = false,
 }) => {
@@ -26,7 +31,7 @@ const Button: React.FC<ButtonProps> = ({
     <button
       type="button"
       className={cn(s.root, {
-        [s.yellow]: yellow,
+        [s.colorYellow]: color === ButtonColor.yellow,
         [s.small]: size === ButtonSize.small,
         [s.fullWidth]: fullWidth,
       })}
