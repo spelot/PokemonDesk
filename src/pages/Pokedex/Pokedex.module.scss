@@ -11,4 +11,9 @@
 .content {
   flex-grow: 1;
   margin: 33px 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: calc(34px + 351px);
+  width: calc(100% + 34px);
 }
