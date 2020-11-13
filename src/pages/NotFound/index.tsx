@@ -4,6 +4,7 @@ import { navigate } from 'hookrouter';
 import Button, { ButtonColor } from '../../components/Button';
 import Layout from '../../components/Layout';
 import Heading from '../../components/Heading';
+import { LinkEnum } from '../../routes';
 
 import TeamRocket from './assets/TeamRocket.png';
 import s from './NotFound.module.scss';
@@ -19,7 +20,7 @@ const NotFoundPage: React.FC = () => {
             <Heading size={1}>
               <span className={s.whiteText}>The rocket team</span> has won this time.
             </Heading>
-            <Button color={ButtonColor.yellow} onClick={() => navigate('/')}>
+            <Button color={ButtonColor.yellow} onClick={() => navigate(LinkEnum.HOME)}>
               Return
             </Button>
           </div>

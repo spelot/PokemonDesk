@@ -1,11 +1,17 @@
 @import '../../variables';
 
 .root {
-  min-height: 100vh;
+  min-height: calc(100vh - 93px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background: linear-gradient(180deg, $third 0%, $primary 100%);
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .content {

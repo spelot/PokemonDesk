@@ -1,11 +1,20 @@
 @import '../../variables';
 
 .root {
-  min-height: 100vh;
+  min-height: calc(100vh - 93px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background: linear-gradient(180deg, #ffffff 30.32%, #f5f5f5 100%);
+
+  h1 {
+    margin-top: 73px;
+    font-size: 35px;
+    line-height: 41px;
+    text-align: center;
+    letter-spacing: 3px;
+    color: #000000;
+  }
 }
 
 .content {
@@ -15,4 +24,8 @@
   display: flex;
   flex-wrap: wrap;
   margin-right: -34px;
+}
+
+.loader {
+  margin: auto;
 }
