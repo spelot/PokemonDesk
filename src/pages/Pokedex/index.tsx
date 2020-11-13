@@ -5,9 +5,9 @@ import cn from 'classnames';
 import Footer from '../../components/Footer';
 import Layout from '../../components/Layout';
 import PokemonCard from '../../components/PokemonCard';
+import Heading from '../../components/Heading';
 
 import s from './Pokedex.module.scss';
-import Heading from '../../components/Heading';
 
 interface IStats {
   hp: number;

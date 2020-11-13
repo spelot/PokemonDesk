@@ -1206,30 +1206,6 @@
       o = n.n(l)()(a.a);
     o.push([
       e.i,
-      '.App-module__App__3M_RZ{width:100%;height:100%;min-height:100vh;overflow:hidden}\n',
-      '',
-      {
-        version: 3,
-        sources: ['webpack://src/App.module.scss'],
-        names: [],
-        mappings: 'AAEA,wBACE,UAAW,CACX,WAAY,CACZ,gBAAiB,CACjB,eAAgB',
-        sourcesContent: [
-          "@import './variables';\n\n.App {\n  width: 100%;\n  height: 100%;\n  min-height: 100vh;\n  overflow: hidden;\n}\n",
-        ],
-        sourceRoot: '',
-      },
-    ]),
-      (o.locals = { App: 'App-module__App__3M_RZ' }),
-      (t.a = o);
-  },
-  function (e, t, n) {
-    'use strict';
-    var r = n(1),
-      a = n.n(r),
-      l = n(2),
-      o = n.n(l)()(a.a);
-    o.push([
-      e.i,
       ".Header-module__root__35hrx{position:relative;z-index:10;height:93px;background:#f5db13;box-shadow:0px 4px 16px rgba(1,28,64,0.2);color:#212121;font-style:normal;font-weight:normal;font-size:25px;line-height:29px}.Header-module__content__3VQro{width:100%;height:100%;max-width:1125px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}.Header-module__logo__RPmCm{width:158px;height:63px}.Header-module__notActiveLogo__3Imky{pointer-events:none}.Header-module__menu__2CFMI{width:100%;max-width:658px;display:flex;justify-content:flex-end;align-items:center}.Header-module__menu__2CFMI li{list-style:none;margin-right:66px;padding-bottom:16px}.Header-module__menu__2CFMI li:last-child{margin-right:0}.Header-module__link__4ebYS{position:relative;font-style:normal;font-weight:normal;font-size:25px;line-height:29px;text-decoration:none;color:#000000}.Header-module__link__4ebYS::after{content:'';position:absolute;bottom:-16px;left:50%;width:0;height:0;border:2px solid #212121;border-radius:3px;opacity:0;transform:translateX(-50%);transition:width 0.2s ease-in-out, opacity 0.2s ease-in-out;will-change:width, opacity}.Header-module__link__4ebYS:hover::after{width:100%;opacity:1}.Header-module__active__1N9yZ{pointer-events:none}.Header-module__active__1N9yZ::after{width:100%;opacity:1;transition:none}\n",
       '',
       {
@@ -1254,6 +1230,30 @@
         link: 'Header-module__link__4ebYS',
         active: 'Header-module__active__1N9yZ',
       }),
+      (t.a = o);
+  },
+  function (e, t, n) {
+    'use strict';
+    var r = n(1),
+      a = n.n(r),
+      l = n(2),
+      o = n.n(l)()(a.a);
+    o.push([
+      e.i,
+      '.App-module__App__3M_RZ{width:100%;height:100%;min-height:100vh;overflow:hidden}\n',
+      '',
+      {
+        version: 3,
+        sources: ['webpack://src/App.module.scss'],
+        names: [],
+        mappings: 'AAEA,wBACE,UAAW,CACX,WAAY,CACZ,gBAAiB,CACjB,eAAgB',
+        sourcesContent: [
+          "@import './variables';\n\n.App {\n  width: 100%;\n  height: 100%;\n  min-height: 100vh;\n  overflow: hidden;\n}\n",
+        ],
+        sourceRoot: '',
+      },
+    ]),
+      (o.locals = { App: 'App-module__App__3M_RZ' }),
       (t.a = o);
   },
   function (e, t, n) {
@@ -9097,14 +9097,14 @@ object-assign
       i = r(n(8)),
       u = r(n(74)),
       s = r(n(77)),
-      c = r(n(78));
+      c = r(n(80));
     t.default = function () {
       var e = l.useRoutes(i.default);
       return a.default.createElement(
         'div',
-        { className: o.default(s.default.App) },
+        { className: o.default(c.default.App) },
         e
-          ? a.default.createElement(a.default.Fragment, null, a.default.createElement(c.default, null), e)
+          ? a.default.createElement(a.default.Fragment, null, a.default.createElement(s.default, null), e)
           : a.default.createElement(u.default, null),
       );
     };
@@ -9975,8 +9975,8 @@ object-assign
       f = u(n(28)),
       d = u(n(12)),
       p = u(n(71)),
-      h = u(n(73)),
-      m = u(n(9));
+      h = u(n(9)),
+      m = u(n(73));
     t.default = function () {
       var e = (function () {
           var e = s.useState(),
@@ -10021,23 +10021,23 @@ object-assign
       return n
         ? s.default.createElement(
             'div',
-            { className: h.default.root },
-            s.default.createElement(m.default, { size: 3, className: h.default.loader }, 'Loading...'),
+            { className: m.default.root },
+            s.default.createElement(h.default, { size: 3, className: m.default.loader }, 'Loading...'),
           )
         : r
         ? s.default.createElement(
             'div',
-            { className: h.default.root },
-            s.default.createElement(m.default, { size: 3, className: h.default.loader }, 'Something wrong!'),
+            { className: m.default.root },
+            s.default.createElement(h.default, { size: 3, className: m.default.loader }, 'Something wrong!'),
           )
         : s.default.createElement(
             'div',
-            { className: h.default.root },
+            { className: m.default.root },
             s.default.createElement(
               d.default,
               null,
               s.default.createElement(
-                m.default,
+                h.default,
                 { size: 1, withoutBold: !0 },
                 t.total,
                 ' ',
@@ -10046,7 +10046,7 @@ object-assign
               ),
               s.default.createElement(
                 'div',
-                { className: c.default(h.default.content) },
+                { className: c.default(m.default.content) },
                 t.pokemons.map(function (e) {
                   return s.default.createElement(p.default, {
                     name: e.name_clean,
@@ -10281,16 +10281,6 @@ object-assign
   },
   function (e, t, n) {
     'use strict';
-    n.r(t);
-    var r = n(3),
-      a = n.n(r),
-      l = n(22),
-      o = { insert: 'head', singleton: !1 };
-    a()(l.a, o);
-    t.default = l.a.locals || {};
-  },
-  function (e, t, n) {
-    'use strict';
     var r =
       (this && this.__importDefault) ||
       function (e) {
@@ -10301,8 +10291,8 @@ object-assign
       l = r(n(4)),
       o = n(6),
       i = n(8),
-      u = r(n(79)),
-      s = n(80);
+      u = r(n(78)),
+      s = n(79);
     t.default = a.default.memo(function () {
       var e,
         t = o.usePath();
@@ -10348,7 +10338,7 @@ object-assign
     n.r(t);
     var r = n(3),
       a = n.n(r),
-      l = n(23),
+      l = n(22),
       o = { insert: 'head', singleton: !1 };
     a()(l.a, o);
     t.default = l.a.locals || {};
@@ -10545,6 +10535,16 @@ object-assign
     }
     t.default =
       'data:image/svg+xml;base64,ZXhwb3J0IGRlZmF1bHQgX193ZWJwYWNrX3B1YmxpY19wYXRoX18gKyAiZm9udHMvbG9nby5zdmciOw==';
+  },
+  function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r = n(3),
+      a = n.n(r),
+      l = n(23),
+      o = { insert: 'head', singleton: !1 };
+    a()(l.a, o);
+    t.default = l.a.locals || {};
   },
   function (e, t, n) {
     'use strict';
