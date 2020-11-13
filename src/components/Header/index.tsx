@@ -1,47 +1,33 @@
 import React from 'react';
 import cn from 'classnames';
-import { Link } from 'react-router-dom';
+import { A, usePath } from 'hookrouter';
+import { GENERAL_MENU } from '../../routes';
 
 import s from './Header.module.scss';
 
 import { ReactComponent as PokemonLogoSvg } from './assets/logo.svg';
 
-interface ILink {
-  key: number;
-  label: string;
-  href: string;
-}
-
-interface IHeader {
-  activeLink: number;
-}
-
-const Header: React.FC<IHeader> = ({ activeLink }) => {
-  const links: ILink[] = [
-    { key: 0, label: 'Home', href: '/' },
-    { key: 1, label: 'Pokédex', href: '/pokedex' },
-    { key: 2, label: 'Legendaries', href: '/legendaries' },
-    { key: 3, label: 'Documentation', href: '/documentation' },
-  ];
+const Header: React.FC = () => {
+  const path = usePath();
 
   return (
     <div className={s.root}>
       <div className={cn(s.content)}>
         <div className={cn(s.logo)}>
-          <Link
-            to="/"
+          <A
+            href="/"
             className={cn({
-              [s.notActiveLogo]: activeLink === 0,
+              [s.notActiveLogo]: path === '/',
             })}>
             <PokemonLogoSvg />
-          </Link>
+          </A>
         </div>
         <ul className={cn(s.menu)}>
-          {links.map(({ key, label, href }, linkId) => (
-            <li key={key}>
-              <Link className={cn(s.link, { [s.active]: linkId === activeLink })} to={href}>
+          {GENERAL_MENU.map(({ label, href }) => (
+            <li key={label}>
+              <A className={cn(s.link, { [s.active]: href === path })} href={href}>
                 {label}
-              </Link>
+              </A>
             </li>
           ))}
         </ul>

@@ -1,0 +1,163 @@
+@import '../../variables';
+@import '../../breakpoints';
+
+.root {
+  width: 351px;
+  height: 136px;
+  box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+  background: #f6f7f9;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  margin-right: 34px;
+  margin-bottom: 45px;
+  cursor: pointer;
+  transition: all ease-in-out 0.15s;
+
+  &:hover {
+    transform: scale(1.03);
+    transition: all ease-in-out 0s;
+  }
+}
+
+.infoWrap {
+  position: absolute;
+  z-index: 1;
+  width: 150px;
+  top: 6px;
+  left: 25px;
+}
+
+.titleName {
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+}
+
+.statWrap {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.statItem {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #4b4b4b;
+  margin-right: 12px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.statValue {
+  width: 36px;
+  height: 36px;
+  border: 3px solid $dark;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+  color: $dark;
+  margin: 0 auto 8px;
+}
+
+.pictureWrap {
+  width: 232px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.typeFire {
+    background: linear-gradient(270deg, #b33327 0.15%, $danger 100%);
+  }
+  &.typeWater {
+    background: linear-gradient(270deg, #5bc7fa 0.15%, #35baff 100%);
+  }
+  &.typeGrass {
+    background: linear-gradient(270deg, #67d36b 0.15%, #64d368 70.88%);
+  }
+  &.typePoison {
+    background: linear-gradient(270deg, #df7edf 0.15%, #d876d8 100%);
+  }
+  &.typeFlying {
+    background: linear-gradient(270deg, #969cf1 0.15%, #9096f0 100%);
+  }
+  &.typeBug {
+    background: linear-gradient(270deg, #9fbb23 0.15%, #9cb820 100%);
+  }
+  &.typeFairy {
+    background: linear-gradient(270deg, #f89eae 0.15%, #f4b5c1 100%);
+  }
+  &.typeElectric {
+    background: linear-gradient(270deg, #f2cb07 0.15%, $primary 100%);
+  }
+
+  img {
+    width: 80%;
+  }
+}
+
+.label {
+  box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.18);
+  border-radius: 11px;
+  height: 15px;
+  min-width: 60px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: $dark;
+  padding: 0 12px 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 12px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &.typeFire {
+    background: $second;
+  }
+  &.typeWater {
+    background: #5bc7fa;
+  }
+  &.typeGrass {
+    background: #73d677;
+  }
+  &.typePoison {
+    background: #d876d8;
+  }
+  &.typeFlying {
+    background: #9096f0;
+  }
+  &.typeBug {
+    background: #9cb820;
+  }
+  &.typeFairy {
+    background: #f4b5c1;
+  }
+  &.typeElectric {
+    background: $primary;
+  }
+}
+
+.labelWrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
