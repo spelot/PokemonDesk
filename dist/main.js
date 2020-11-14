@@ -9979,7 +9979,7 @@ object-assign
       m = u(n(73));
     t.default = function () {
       var e = (function () {
-          var e = s.useState(),
+          var e = s.useState(null),
             t = e[0],
             n = e[1],
             r = s.useState(!0),
@@ -10039,7 +10039,7 @@ object-assign
               s.default.createElement(
                 h.default,
                 { size: 1, withoutBold: !0 },
-                t.total,
+                null == t ? void 0 : t.total,
                 ' ',
                 s.default.createElement('b', null, 'Pokemons'),
                 ' for you to choose your favorite',
@@ -10047,16 +10047,18 @@ object-assign
               s.default.createElement(
                 'div',
                 { className: c.default(m.default.content) },
-                t.pokemons.map(function (e) {
-                  return s.default.createElement(p.default, {
-                    name: e.name_clean,
-                    attack: e.stats.attack,
-                    defense: e.stats.defense,
-                    img: e.img,
-                    types: e.types,
-                    key: e.name_clean,
-                  });
-                }),
+                null == t
+                  ? void 0
+                  : t.pokemons.map(function (e) {
+                      return s.default.createElement(p.default, {
+                        name: e.name_clean,
+                        attack: e.stats.attack,
+                        defense: e.stats.defense,
+                        img: e.img,
+                        types: e.types,
+                        key: e.name_clean,
+                      });
+                    }),
               ),
             ),
             s.default.createElement(f.default, null),

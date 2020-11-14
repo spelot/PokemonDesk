@@ -39,7 +39,7 @@ interface IData {
 }
 
 const usePokemons = () => {
-  const [data, setData] = useState<IData>();
+  const [data, setData] = useState<IData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
@@ -96,10 +96,10 @@ const PokedexPage: React.FC = () => {
     <div className={s.root}>
       <Layout>
         <Heading size={1} withoutBold>
-          {data!.total} <b>Pokemons</b> for you to choose your favorite
+          {data?.total} <b>Pokemons</b> for you to choose your favorite
         </Heading>
         <div className={cn(s.content)}>
-          {data!.pokemons.map((pokemonData) => (
+          {data?.pokemons.map((pokemonData) => (
             <PokemonCard
               name={pokemonData.name_clean}
               attack={pokemonData.stats.attack}
