@@ -3,19 +3,18 @@ import cn from 'classnames';
 import { navigate } from 'hookrouter';
 
 import Footer from '../../components/Footer';
-import Header from '../../components/Header';
 import Button from '../../components/Button';
 import Layout from '../../components/Layout';
 import Parallax from '../../components/Parallax';
 import Heading from '../../components/Heading';
+import { LinkEnum } from '../../routes';
 
 import s from './Home.module.scss';
 
 const HomePage: React.FC = () => {
   return (
     <div className={s.root}>
-      <Header />
-      <Layout>
+      <Layout className={s.wrap}>
         <div className={cn(s.content)}>
           <Heading size={1} withoutBold>
             <b>Find</b> all your favorite <b>Pokemon</b>
@@ -23,7 +22,7 @@ const HomePage: React.FC = () => {
           <Heading size={2} withoutBold>
             You can know the type of Pokemon, its strengths, disadvantages and abilities
           </Heading>
-          <Button onClick={() => navigate('/pokedex')}>See pokemons</Button>
+          <Button onClick={() => navigate(LinkEnum.POKEDEX)}>See pokemons</Button>
         </div>
         <div className={s.contentParallax}>
           <Parallax />
