@@ -4,6 +4,8 @@ import Heading from '../Heading';
 
 import s from './PokemonCard.module.scss';
 
+import ImageNotFound from './assets/ImageNotFound.png';
+
 const capitalizeFirstLetter = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
 
 interface IPokemonCard {
@@ -11,7 +13,7 @@ interface IPokemonCard {
   attack: number;
   defense: number;
   types: string[];
-  img: string;
+  img: string | null;
 }
 
 const PokemonCard: React.FC<IPokemonCard> = ({ name, attack, defense, types, img }) => {
@@ -61,7 +63,11 @@ const PokemonCard: React.FC<IPokemonCard> = ({ name, attack, defense, types, img
           [s.typeFairy]: types[0] === 'fairy',
           [s.typeElectric]: types[0] === 'electric',
         })}>
-        <img src={img} alt={capitalizeFirstLetter(name)} />
+        {img ? (
+          <img src={img} alt={capitalizeFirstLetter(name)} />
+        ) : (
+          <img src={ImageNotFound} className={s.notFound} alt={capitalizeFirstLetter(name)} />
+        )}
       </div>
     </div>
   );
