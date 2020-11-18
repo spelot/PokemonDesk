@@ -24,7 +24,7 @@ const useData = <T>(endpoint: EnumEndpoint, query: querystring.ParsedUrlQueryInp
     };
 
     getData();
-  }, [endpoint, query, ...deps]);
+  }, deps);
 
   return {
     data,

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import cn from 'classnames';
 
 import Heading from '../Heading';
@@ -14,7 +14,7 @@ const LoadingBlock: React.FC<ILoadingBlock> = ({ isLoading, className = null, ch
       Loading...
     </Heading>
   ) : (
-    (children as ReactElement)
+    <>{children}</>
   );
 };
 
