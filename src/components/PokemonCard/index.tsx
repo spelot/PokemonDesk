@@ -5,8 +5,7 @@ import Heading from '../Heading';
 import s from './PokemonCard.module.scss';
 
 import ImageNotFound from './assets/ImageNotFound.png';
-
-const capitalizeFirstLetter = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
+import toCapitalizeFirstLetter from '../../utils/toCapitalizeFirstLetter';
 
 interface IPokemonCard {
   name: string;
@@ -21,7 +20,7 @@ const PokemonCard: React.FC<IPokemonCard> = ({ name, attack, defense, types, img
     <div className={s.root}>
       <div className={s.infoWrap}>
         <Heading size={3} className={s.titleName}>
-          {capitalizeFirstLetter(name)}
+          {toCapitalizeFirstLetter(name)}
         </Heading>
         <div className={s.statWrap}>
           <div className={s.statItem}>
@@ -57,7 +56,7 @@ const PokemonCard: React.FC<IPokemonCard> = ({ name, attack, defense, types, img
                 [s.typeSteel]: type === 'steel',
                 [s.typeWater]: type === 'water',
               })}>
-              {capitalizeFirstLetter(type)}
+              {toCapitalizeFirstLetter(type)}
             </span>
           ))}
         </div>
@@ -84,9 +83,9 @@ const PokemonCard: React.FC<IPokemonCard> = ({ name, attack, defense, types, img
           [s.typeWater]: types[0] === 'water',
         })}>
         {img ? (
-          <img src={img} alt={capitalizeFirstLetter(name)} />
+          <img src={img} alt={toCapitalizeFirstLetter(name)} />
         ) : (
-          <img src={ImageNotFound} className={s.notFound} alt={capitalizeFirstLetter(name)} />
+          <img src={ImageNotFound} className={s.notFound} alt={toCapitalizeFirstLetter(name)} />
         )}
       </div>
     </div>
