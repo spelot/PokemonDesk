@@ -4,6 +4,8 @@ import Heading from '../Heading';
 
 import s from './PokemonCard.module.scss';
 
+import ImageNotFound from './assets/ImageNotFound.png';
+
 const capitalizeFirstLetter = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
 
 interface IPokemonCard {
@@ -11,7 +13,7 @@ interface IPokemonCard {
   attack: number;
   defense: number;
   types: string[];
-  img: string;
+  img: string | null;
 }
 
 const PokemonCard: React.FC<IPokemonCard> = ({ name, attack, defense, types, img }) => {
@@ -36,14 +38,24 @@ const PokemonCard: React.FC<IPokemonCard> = ({ name, attack, defense, types, img
             <span
               key={type}
               className={cn(s.label, {
-                [s.typeFire]: type === 'fire',
-                [s.typeWater]: type === 'water',
-                [s.typeGrass]: type === 'grass',
-                [s.typePoison]: type === 'poison',
-                [s.typeFlying]: type === 'flying',
                 [s.typeBug]: type === 'bug',
-                [s.typeFairy]: type === 'fairy',
+                [s.typeDark]: type === 'dark',
+                [s.typeDragon]: type === 'dragon',
                 [s.typeElectric]: type === 'electric',
+                [s.typeFairy]: type === 'fairy',
+                [s.typeFighting]: type === 'fighting',
+                [s.typeFire]: type === 'fire',
+                [s.typeFlying]: type === 'flying',
+                [s.typeGhost]: type === 'ghost',
+                [s.typeGrass]: type === 'grass',
+                [s.typeGround]: type === 'ground',
+                [s.typeIce]: type === 'ice',
+                [s.typeNormal]: type === 'normal',
+                [s.typePoison]: type === 'poison',
+                [s.typePsychic]: type === 'psychic',
+                [s.typeRock]: type === 'rock',
+                [s.typeSteel]: type === 'steel',
+                [s.typeWater]: type === 'water',
               })}>
               {capitalizeFirstLetter(type)}
             </span>
@@ -52,16 +64,30 @@ const PokemonCard: React.FC<IPokemonCard> = ({ name, attack, defense, types, img
       </div>
       <div
         className={cn(s.pictureWrap, {
-          [s.typeFire]: types[0] === 'fire',
-          [s.typeWater]: types[0] === 'water',
-          [s.typeGrass]: types[0] === 'grass',
-          [s.typePoison]: types[0] === 'poison',
-          [s.typeFlying]: types[0] === 'flying',
           [s.typeBug]: types[0] === 'bug',
-          [s.typeFairy]: types[0] === 'fairy',
+          [s.typeDark]: types[0] === 'dark',
+          [s.typeDragon]: types[0] === 'dragon',
           [s.typeElectric]: types[0] === 'electric',
+          [s.typeFairy]: types[0] === 'fairy',
+          [s.typeFighting]: types[0] === 'fighting',
+          [s.typeFire]: types[0] === 'fire',
+          [s.typeFlying]: types[0] === 'flying',
+          [s.typeGhost]: types[0] === 'ghost',
+          [s.typeGrass]: types[0] === 'grass',
+          [s.typeGround]: types[0] === 'ground',
+          [s.typeIce]: types[0] === 'ice',
+          [s.typeNormal]: types[0] === 'normal',
+          [s.typePoison]: types[0] === 'poison',
+          [s.typePsychic]: types[0] === 'psychic',
+          [s.typeRock]: types[0] === 'rock',
+          [s.typeSteel]: types[0] === 'steel',
+          [s.typeWater]: types[0] === 'water',
         })}>
-        <img src={img} alt={capitalizeFirstLetter(name)} />
+        {img ? (
+          <img src={img} alt={capitalizeFirstLetter(name)} />
+        ) : (
+          <img src={ImageNotFound} className={s.notFound} alt={capitalizeFirstLetter(name)} />
+        )}
       </div>
     </div>
   );
