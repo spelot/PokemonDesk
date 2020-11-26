@@ -1,11 +1,11 @@
 import React from 'react';
 import cn from 'classnames';
 import Heading from '../Heading';
+import toCapitalizeFirstLetter from '../../utils/toCapitalizeFirstLetter';
 
 import s from './PokemonCard.module.scss';
 
 import ImageNotFound from './assets/ImageNotFound.png';
-import toCapitalizeFirstLetter from '../../utils/toCapitalizeFirstLetter';
 
 interface IPokemonCard {
   name: string;
