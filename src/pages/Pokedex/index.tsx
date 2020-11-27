@@ -10,6 +10,7 @@ import Heading from '../../components/Heading';
 import useData from '../../hook/getData';
 import { EnumEndpoint } from '../../config';
 import LoadingBlock from '../../components/LoadingBlock';
+import useDebounce from '../../hook/useDebounce';
 
 import s from './Pokedex.module.scss';
 
@@ -37,7 +38,7 @@ interface IPokemon {
   weight: number;
 }
 
-interface IData {
+interface IPokemonsRequest {
   total: number;
   pokemons: IPokemon[];
 }
@@ -45,8 +46,9 @@ interface IData {
 const PokedexPage: React.FC = () => {
   const [searchValue, setSearchValue] = useState('');
   const [query, setQuery] = useState<querystring.ParsedUrlQueryInput>({});
+  const debouncedValue = useDebounce(searchValue, 500);
 
-  const { data, isLoading, isError } = useData<IData>(EnumEndpoint.getPokemons, query, [searchValue]);
+  const { data, isLoading, isError } = useData<IPokemonsRequest>(EnumEndpoint.getPokemons, query, [debouncedValue]);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;

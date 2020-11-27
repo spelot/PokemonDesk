@@ -1,5 +1,6 @@
 export enum EnumEndpoint {
   getPokemons,
+  getPokemon,
 }
 
 interface IEndpoint {
@@ -35,6 +36,12 @@ export const config: IConfig = {
         method: 'GET',
         uri: {
           pathname: '/api/v1/pokemons',
+        },
+      },
+      [EnumEndpoint.getPokemon]: {
+        method: 'GET',
+        uri: {
+          pathname: '/api/v1/pokemon/{id}',
         },
       },
     },
