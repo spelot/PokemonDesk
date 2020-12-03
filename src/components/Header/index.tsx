@@ -12,8 +12,8 @@ const Header: React.FC = () => {
 
   return (
     <div className={s.root}>
-      <div className={cn(s.content)}>
-        <div className={cn(s.logo)}>
+      <div className={s.content}>
+        <div className={s.logo}>
           <A
             href="/"
             className={cn({
@@ -22,7 +22,7 @@ const Header: React.FC = () => {
             <PokemonLogoSvg />
           </A>
         </div>
-        <ul className={cn(s.menu)}>
+        <ul className={s.menu}>
           {GENERAL_MENU.map(({ label, href }) => (
             <li key={label}>
               <A className={cn(s.link, { [s.active]: href === path })} href={href}>
