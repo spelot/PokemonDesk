@@ -37371,13 +37371,49 @@ object-assign
       /***/ function (module, exports, __webpack_require__) {
         'use strict';
 
+        var __createBinding =
+          (this && this.__createBinding) ||
+          (Object.create
+            ? function (o, m, k, k2) {
+                if (k2 === undefined) k2 = k;
+                Object.defineProperty(o, k2, {
+                  enumerable: true,
+                  get: function () {
+                    return m[k];
+                  },
+                });
+              }
+            : function (o, m, k, k2) {
+                if (k2 === undefined) k2 = k;
+                o[k2] = m[k];
+              });
+        var __setModuleDefault =
+          (this && this.__setModuleDefault) ||
+          (Object.create
+            ? function (o, v) {
+                Object.defineProperty(o, 'default', { enumerable: true, value: v });
+              }
+            : function (o, v) {
+                o['default'] = v;
+              });
+        var __importStar =
+          (this && this.__importStar) ||
+          function (mod) {
+            if (mod && mod.__esModule) return mod;
+            var result = {};
+            if (mod != null)
+              for (var k in mod)
+                if (k !== 'default' && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+            __setModuleDefault(result, mod);
+            return result;
+          };
         var __importDefault =
           (this && this.__importDefault) ||
           function (mod) {
             return mod && mod.__esModule ? mod : { default: mod };
           };
         Object.defineProperty(exports, '__esModule', { value: true });
-        var react_1 = __importDefault(__webpack_require__(/*! react */ './node_modules/react/index.js'));
+        var react_1 = __importStar(__webpack_require__(/*! react */ './node_modules/react/index.js'));
         var classnames_1 = __importDefault(__webpack_require__(/*! classnames */ './node_modules/classnames/index.js'));
         var hookrouter_1 = __webpack_require__(/*! hookrouter */ './node_modules/hookrouter/dist/index.js');
         var routes_1 = __webpack_require__(/*! ../../routes */ './src/routes.tsx');
@@ -37387,7 +37423,16 @@ object-assign
         var logo_svg_1 = __webpack_require__(/*! ./assets/logo.svg */ './src/components/Header/assets/logo.svg');
         var Header = function () {
           var _a;
-          var path = hookrouter_1.usePath();
+          var path0 = hookrouter_1.usePath();
+          var _b = react_1.useState(''),
+            path = _b[0],
+            setPath = _b[1];
+          react_1.useEffect(
+            function () {
+              setPath(path0);
+            },
+            [path0],
+          );
           return react_1.default.createElement(
             'div',
             { className: Header_module_scss_1.default.root },
@@ -37436,6 +37481,39 @@ object-assign
           );
         };
         exports.default = react_1.default.memo(Header);
+        // import React from 'react';
+        // import cn from 'classnames';
+        // import { A } from 'hookrouter';
+        // import { GENERAL_MENU } from '../../routes';
+        // import s from './Header.module.scss';
+        // import { ReactComponent as PokemonLogoSvg } from './assets/logo.svg';
+        // const Header: React.FC = () => {
+        //   return (
+        //     <div className={s.root}>
+        //       <div className={s.content}>
+        //         <div className={s.logo}>
+        //           <A
+        //             href="/"
+        //             className={cn({
+        //               [s.notActiveLogo]: false,
+        //             })}>
+        //             <PokemonLogoSvg />
+        //           </A>
+        //         </div>
+        //         <ul className={s.menu}>
+        //           {GENERAL_MENU.map(({ label, href }) => (
+        //             <li key={label}>
+        //               <A className={cn(s.link, { [s.active]: false })} href={href}>
+        //                 {label}
+        //               </A>
+        //             </li>
+        //           ))}
+        //         </ul>
+        //       </div>
+        //     </div>
+        //   );
+        // };
+        // export default React.memo(Header);
 
         /***/
       },
